@@ -3,29 +3,37 @@ import React from 'react';
 import AboutUs from  './pages/AboutUs';
 import OurWork from  './pages/OurWork';
 import ContactUs from  './pages/ContactUs';
+import MovieDetails from './pages/MovieDetails';
 //Global Style
 import GlobalStyle from './components/GlobalStyle';
 import Nav from './components/Nav';
 //Router
-import {Switch, Route} from 'react-router-dom'
-
+import {Switch, Route, useLocation} from 'react-router-dom';
+//Framer motion
+import {AnimatePresence} from 'framer-motion';
 
 function App() {
+  const location = useLocation();
   return (
     <div className="App">
       <GlobalStyle/>
       <Nav/>
-      <Switch>
+      <AnimatePresence>
+        <Switch >
         <Route path="/" exact>
           <AboutUs/>
         </Route>
-        <Route path="/work">
+        <Route path="/work" exact>
           <OurWork/>
+        </Route>
+        <Route path="/work/:id">
+          <MovieDetails/>
         </Route>
         <Route path="/contact">
           <ContactUs/>
         </Route>
       </Switch>
+      </AnimatePresence>
     </div>
   );
 }
