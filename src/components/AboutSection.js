@@ -1,27 +1,21 @@
 import React from 'react';
 import home1 from '../img/home1.png';
+import Wave from './Wave';
+
 //Styled
 import {About, Description, Image, Hide} from '../styles';
 
 //Framer motion
 import { motion} from 'framer-motion';
+import { titleAnim, fade, photoAnim } from '../animation';
 
 const AboutSection = () => {
-
-    const titleAnim ={
-        hidden: { opacity:0 },
-        shown: { opacity:1, transition: {duration:2}},
-    }
-    const container ={
-        hidden: { x:100 },
-        shown: { x:0, transition: {duration:0.75,ease:'easeOut', staggerChildren: 1,}},
-    }
 
     return(
         <About>
             <Description>
 
-                <motion.div variants={container} animate="shown" initial="hidden" className="title">
+                <motion.div>
                     <Hide>
                         <motion.h2 variants={titleAnim}>We work to make</motion.h2>
                     </Hide>
@@ -33,16 +27,16 @@ const AboutSection = () => {
                     </Hide>
                 </motion.div>
 
-                <p>Contact us for Photography or Videography ideas that you have. We have professionals with amazing skills.</p>
+                <motion.p variants={fade}>Contact us for Photography or Videography ideas that you have. We have professionals with amazing skills.</motion.p>
 
-                <button>Contact Us</button>
+                <motion.button variants={fade}>Contact Us</motion.button>
 
             </Description>
 
             <Image>
-                <img src={home1} alt="Guy with a camera"/>
+                <motion.img variants={photoAnim} src={home1} alt="Guy with a camera"/>
             </Image>
-
+            <Wave />
         </About>
     );
 }
