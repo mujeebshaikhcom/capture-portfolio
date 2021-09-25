@@ -36,6 +36,21 @@ export const fade = {
     }
 }
 
+export const scrollReveal = {
+    hidden: {
+        opacity: 0,
+        scale: 1.1,
+        transition: {
+            duration: 0.6,
+        },
+    },
+    shown: {
+        opacity:1,
+        scale: 1,
+        transition: {duration: 0.6, ease: 'easeOut'}
+    }
+}
+
 export const photoAnim = {
     hidden: {scale: 1.5, opacity: 0},
     shown: {
