@@ -23,7 +23,7 @@ const ContactUs = () => {
             <Hide>
                 <Social variants ={titleAnim}>
                     <Circle/>
-                    <h2>Locate us</h2>
+                    <h2>Meet us</h2>
                 </Social>
             </Hide>
             <Hide>
