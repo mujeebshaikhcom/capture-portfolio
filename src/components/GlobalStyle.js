@@ -51,6 +51,17 @@ p {
     line-height: 1.5;
 }
 
+@media (max-width: 1700px) {
+    html {
+        font-size: 75%;
+    }
+}
+@media (max-width: 100px) {
+    html {
+        font-size: 75%;
+    }
+}
+
 `
 
 export default GlobalStyle;
